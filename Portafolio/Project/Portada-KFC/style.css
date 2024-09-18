@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+
+body,ul,h1,p,li,nav,div,a,img,header,main{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: radial-gradient(circle,#f25608b7  0%, #df1b38ff 100%);
+}
+/*------------------Header----------------------*/
+
+.header{
+    display: flex;
+    position: relative;
+    background-color:transparent;
+}
+.header img{
+    width: 7rem;
+    background:linear-gradient(to top,transparent 0%,#fff 100%);
+    border-radius: 10px;
+}
+
+.header_nav{
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.nav_ul{
+    display: flex;
+    gap: 10px;
+}
+
+.ul_li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+/*-------------main----------------*/
+
+.main{
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main_content{
+    width: 50dvw;
+    position: relative;
+    margin-top: 20px;
+    height: 80dvh;
+}
+
+.main_content h1{
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+.main_content p{
+    margin-top: 30px;
+    width: 800px;
+    font-size: 1.3rem;
+}
+
+.button{
+    position: absolute;
+    left: 0;
+    padding: 15px 50px;
+    margin-top: 30px;
+    border-radius: 50px;
+    background-color: #fff;
+}
+.button a{
+    background-color: #fff;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.main_img{
+    margin-top: 50px;
+    margin-right: 10px;
+}
+
+
+.social_media{
+    position: absolute;
+    bottom: 100px;
+}
+
+.social_media a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 10px;
+}
