@@ -6,19 +6,13 @@
     <title data-translate-key="pageTitle">Portafolio | Janky Liendo</title>
     
     <link rel="icon" type="image/png" href="https://placehold.co/32x32/0f172a/38bdf8?text=JL">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header" id="header">
         <nav class="header-nav">
             <a href="#" class="logo">JANKY.</a>
@@ -28,13 +22,11 @@
                 <li class="ul-li"><a href="#technologies" class="nav-link" data-translate-key="navTech">Technologies</a></li>
                 <li class="ul-li"><a href="#projects" class="nav-link" data-translate-key="navPortfolio">Portfolio</a></li>
                 <li class="ul-li"><a href="#contact" class="nav-link" data-translate-key="navContact">Contact</a></li>
-                <!-- Theme switcher for mobile menu -->
                 <div class="theme-switcher" id="theme-switcher-mobile">
                     <i class="bi bi-moon-stars-fill" id="theme-icon-mobile"></i>
                 </div>
             </ul>
             <div class="nav-controls">
-                 <!-- Language Switcher -->
                  <div class="language-switcher">
                     <i class="bi bi-globe"></i>
                     <select id="language-select">
@@ -42,7 +34,6 @@
                         <option value="en">English</option>
                     </select>
                 </div>
-                <!-- Theme switcher for desktop -->
                 <div class="theme-switcher" id="theme-switcher-desktop">
                     <i class="bi bi-moon-stars-fill" id="theme-icon-desktop"></i>
                 </div>
@@ -54,9 +45,7 @@
     </header>
 
     <main>
-        <!-- Profile Section -->
         <section class="profile" id="profile">
-            <!-- Image now comes first in the HTML structure -->
             <div class="container-img reveal">
                  <img src="img/janky.png" alt="Foto de Janky Liendo" data-translate-alt="altJankyPhoto">
             </div>
@@ -74,7 +63,6 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section class="about" id="about-me">
             <div class="about-img reveal">
                 <img src="https://placehold.co/600x450/0f172a/38bdf8?text=Web+Dev" alt="Ilustración de desarrollo web" data-translate-alt="altWebDevIllustration">
@@ -86,7 +74,6 @@
             </div>
         </section>
 
-        <!-- Technologies Section -->
         <section class="technologies" id="technologies">
             <h2 class="section-title reveal" data-translate-key="technologiesTitle">Tecnologías</h2>
             <div class="technologies-container">
@@ -103,7 +90,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section class="project" id="projects">
             <h2 class="section-title reveal" data-translate-key="projectsTitle">Proyectos</h2>
             <div class="project-container">
@@ -164,7 +150,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section class="contact" id="contact">
             <h2 class="section-title reveal" data-translate-key="contactTitle">Contacto</h2>
             <div class="contact-container reveal">
@@ -193,12 +178,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p data-translate-key="footerText">&copy; 2024 Janky Liendo. Creado con pasión y código.</p>
     </footer>
 
-    <!-- Modal para feedback del formulario -->
     <div class="modal" id="feedback-modal">
         <div class="modal-content">
             <i class="" id="modal-icon"></i>
@@ -207,10 +190,8 @@
         </div>
     </div>
 
-    <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     
-    <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 </html>
