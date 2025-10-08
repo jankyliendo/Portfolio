@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // --- I18N (Traducción) ---
     const translations = {
         es: {
             pageTitle: "Portafolio | Janky Liendo",
@@ -9,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
             navPortfolio: "Portafolio",
             navContact: "Contacto",
             profileTitle: "Hola, Soy",
-            profileDescription: "Soy un desarrollador web motivado y estudiante de Ingeniería de Sistemas, con muchas ganas de aprender y crecer en el desarrollo web.",
+            profileDescription: "Soy un desarrollador web motivado y apasionado Ingeniero de Sistemas, con muchas ganas de aprender y crecer en el desarrollo web.",
             downloadCV: "Descargar CV",
             aboutMeTitle: "Sobre Mí",
-            aboutMeP1: "¡Hola! Soy Janky Liendo, un desarrollador web en formación. Como estudiante de Ingeniería de Sistemas, me especializo en la creación de experiencias web dinámicas y funcionales. Mi caja de herramientas incluye HTML, CSS y JavaScript, junto con frameworks modernos como React y Angular para el frontend.",
+            aboutMeP1: "¡Hola! Soy Janky Liendo, un desarrollador web en formación. Como Ingeniero de Sistemas, me especializo en la creación de experiencias web dinámicas y funcionales. Mi caja de herramientas incluye HTML, CSS y JavaScript, junto con frameworks modernos como React y Angular para el frontend.",
             aboutMeP2: "En el backend, tengo experiencia trabajando con Python y gestionando bases de datos con SQL. Además, he desarrollado proyectos utilizando WordPress, lo que me ha dado una visión completa del ciclo de vida del desarrollo web. Me entusiasma aplicar mis habilidades en proyectos desafiantes y colaborar con equipos que impulsen la innovación. ¡Explora mis proyectos y conectemos!",
             technologiesTitle: "Tecnologías",
             projectsTitle: "Proyectos",
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modalError: "Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.",
             modalUnavailable: "El servicio de correo no está disponible.",
             modalClose: "Cerrar",
-            typingWords: ["Tu mejor opcion.", "un Developer.", "un Creador."],
+            typingWords: ["Tu mejor opcion.", "un Desarrollador.", "un Creador."],
             altJankyPhoto: "Foto de Janky Liendo",
             altWebDevIllustration: "Ilustración de desarrollo web",
             altProject1: "Proyecto 1",
@@ -54,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
             navPortfolio: "Portfolio",
             navContact: "Contact",
             profileTitle: "Hello, I'm",
-            profileDescription: "I am a motivated web developer and Systems Engineering student, eager to learn and grow in web development.",
+            profileDescription: "I am a motivated web developer and passionate Systems Engineering, eager to learn and grow in web development.",
             downloadCV: "Download CV",
             aboutMeTitle: "About Me",
-            aboutMeP1: "Hi! I'm Janky Liendo, a web developer in training. As a Systems Engineering student, I specialize in creating dynamic and functional web experiences. My toolbox includes HTML, CSS, and JavaScript, along with modern frameworks like React and Angular for the frontend.",
+            aboutMeP1: "Hi! I'm Janky Liendo, a web developer in training. As a Systems Engineering, I specialize in creating dynamic and functional web experiences. My toolbox includes HTML, CSS, and JavaScript, along with modern frameworks like React and Angular for the frontend.",
             aboutMeP2: "On the backend, I have experience working with Python and managing databases with SQL. Additionally, I have developed projects using WordPress, which has given me a comprehensive view of the web development lifecycle. I am excited to apply my skills to challenging projects and collaborate with teams that drive innovation. Explore my projects and let's connect!",
             technologiesTitle: "Technologies",
             projectsTitle: "Projects",
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         
+        // Update typing effect words
         if (typingTextElement) {
             typingWords = translations[lang].typingWords;
             wordIndex = 0;
@@ -137,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setLanguage(e.target.value);
     });
     
+    // --- THEME SWITCHER (MODO CLARO/OSCURO) ---
     const themeSwitcherDesktop = document.getElementById('theme-switcher-desktop');
     const themeSwitcherMobile = document.getElementById('theme-switcher-mobile');
     const themeIconDesktop = document.getElementById('theme-icon-desktop');
@@ -156,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setIcon(isLight);
     }
 
+    // Cargar tema guardado
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
@@ -169,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (themeSwitcherMobile) themeSwitcherMobile.addEventListener('click', toggleTheme);
 
 
+    // --- NAVEGACIÓN MÓVIL ---
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -189,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- HEADER CON SCROLL ---
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -200,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- ANIMACIÓN DE SCROLL (REVEAL) ---
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -211,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     revealElements.forEach(el => observer.observe(el));
 
+    // --- EFECTO DE ESCRITURA (TYPING) ---
     const typingTextElement = document.querySelector('.typing-text');
     let typingWords = translations[currentLang].typingWords;
     let wordIndex = 0;
@@ -219,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let typeTimeout;
 
     function type() {
-        clearTimeout(typeTimeout); 
+        clearTimeout(typeTimeout); // Clear previous timeout
         const currentWord = typingWords[wordIndex];
         if (isDeleting) {
             typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
@@ -244,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    // --- NAVEGACIÓN ACTIVA AL SCROLLEAR ---
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         let scrollY = window.pageYOffset;
@@ -262,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // --- HACER CLICABLES LAS TARJETAS DE PROYECTO ---
     const projectItems = document.querySelectorAll('.project-item');
     projectItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -272,6 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // --- FORMULARIO DE CONTACTO CON EMAILJS Y MODAL ---
     (function() {
         if(typeof emailjs !== 'undefined') {
             emailjs.init("PsmMepGi8NRf9cvAc"); 
@@ -311,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
             submitButton.disabled = true;
 
             if(typeof emailjs !== 'undefined') {
-                emailjs.sendForm('Developer-web', 'template_kgci70l', this) 
+                emailjs.sendForm('Developer-web', 'template_kgci70l', this) // Reemplaza con tu Service ID y Template ID
                     .then(function() {
                         showModal(true, 'modalSuccess');
                         contactForm.reset();
@@ -330,6 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- INITIALIZE LANGUAGE ---
     languageSelect.value = currentLang;
     setLanguage(currentLang);
 });

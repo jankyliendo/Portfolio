@@ -1,5 +1,8 @@
+/* ------------------- */
 /* VARIABLES Y GLOBALES */
+/* ------------------- */
 :root {
+    /* Dark Mode (Default) */
     --bg-color: #0f172a;
     --card-color: #1e293b;
     --primary-color: #38bdf8;
@@ -14,6 +17,7 @@
 }
 
 body.light-mode {
+    /* Light Mode */
     --bg-color: #f1f5f9;
     --card-color: #ffffff;
     --text-color: #0f172a;
@@ -44,6 +48,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Efecto de fondo Aurora */
 body::before {
     content: '';
     position: fixed;
@@ -89,6 +94,7 @@ section {
     border-radius: 2px;
 }
 
+/* Animaciones de Scroll */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -99,7 +105,10 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ------------------- */
 /* HEADER Y NAVEGACIÓN */
+/* ------------------- */
 .header {
     position: fixed;
     top: 0;
@@ -189,7 +198,7 @@ body.light-mode .header.scrolled {
 }
 
 #theme-switcher-mobile {
-    display: none;
+    display: none; /* Oculta el de móvil en la vista de escritorio */
 }
 
 .menu-toggle {
@@ -222,7 +231,7 @@ body.light-mode .header.scrolled {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding-right: 15px; 
+    padding-right: 15px; /* Space for custom arrow */
 }
 
 .language-switcher select:focus {
@@ -247,7 +256,9 @@ body.light-mode .header.scrolled {
         font-size: 2rem;
     }
 }
+/* ------------------- */
 /* SECCIÓN PERFIL (HERO) */
+/* ------------------- */
 .profile {
     min-height: 100vh;
     display: flex;
@@ -348,7 +359,9 @@ body.light-mode .header.scrolled {
     box-shadow: 0 0 50px var(--shadow-color);
 }
 
+/* ------------------- */
 /* SECCIÓN SOBRE MÍ */
+/* ------------------- */
 .about {
     display: flex;
     align-items: center;
@@ -383,7 +396,9 @@ body.light-mode .header.scrolled {
 }
 
 
+/* ------------------- */
 /* SECCIÓN TECNOLOGÍAS */
+/* ------------------- */
 .technologies {
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -432,7 +447,9 @@ body.light-mode .technologies-icons {
     filter: grayscale(0);
 }
 
+/* ------------------- */
 /* SECCIÓN PROYECTOS */
+/* ------------------- */
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -475,7 +492,7 @@ body.light-mode .project-item {
     transform: scale(1.1);
 }
 
-/* --- ESTILOS DEL OVERLAY --- */
+/* --- ESTILOS DEL OVERLAY DEL PROYECTO --- */
 .project-info {
     position: absolute;
     top: 0;
@@ -536,7 +553,7 @@ body.light-mode .project-info .link {
 }
 
 .project-info .link::after {
-    content: '\2197'; 
+    content: '\2197'; /* Flecha hacia arriba a la derecha */
     transition: transform 0.3s ease;
 }
 
@@ -544,7 +561,9 @@ body.light-mode .project-info .link {
     transform: translate(3px, -3px);
 }
 
+/* ------------------- */
 /* SECCIÓN CONTACTO */
+/* ------------------- */
 .contact {
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -626,7 +645,9 @@ body.light-mode .contact {
     box-shadow: 0 6px 20px var(--shadow-color);
 }
 
+/* ------------------- */
 /* FOOTER */
+/* ------------------- */
 footer {
     padding: 30px 5%;
     text-align: center;
@@ -635,7 +656,9 @@ footer {
     transition: background-color 0.3s ease;
 }
 
+/* ------------------- */
 /* MODAL DE ALERTA */
+/* ------------------- */
 .modal {
     position: fixed;
     top: 0;
@@ -689,7 +712,9 @@ footer {
     cursor: pointer;
 }
 
+/* ------------------- */
 /* RESPONSIVE DESIGN */
+/* ------------------- */
 
 @media (max-width: 991px) {
     .profile {
