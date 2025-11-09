@@ -1,43 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbox</title>
+    <title>Chat con Ventanas Flotantes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat">
-        <div class="chat_user">
-            <img src="janky.png">
-            <span>Janky liendo</span>
+
+    <button id="mainMenuBtn" class="corner-btn left-btn">☰</button>
+    <button id="historyBtn" class="corner-btn right-btn">🕒</button>
+
+    <div class="app-container">
+        <main class="chat-area">
+            <div class="chat_user">
+                <div class="user-info">
+                    <img src="janky.png" alt="Avatar" id="currentAvatar" onerror="this.src='https://via.placeholder.com/40'">
+                    <span id="currentName">Janky Liendo</span>
+                </div>
+            </div>
+
+            <div class="chat_content" id="messageContainer">
+                </div>
+            
+            <div class="chat_input_area">
+                <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+                <button id="sendBtn">➤</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="menuWindow" class="floating-window window-left">
+        <div class="window-header">
+            <h3>Menú</h3>
+            <button class="close-btn" id="closeMenuBtn">×</button>
         </div>
-        <div class="chat_content">
-            <!--msg 1-->
-            <div class="msg">
-                <p class="msg_content">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse velit incidunt voluptates culpa adipisci quae. Accusantium, fugiat minima, sit placeat molestias laboriosam eligendi hic dolor totam autem nobis sint officiis.
-                </p>
-            </div>
-            <!--msg 2-->
-            <div class="msg self">
-                <p class="msg_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum maiores, asperiores, amet praesentium consequuntur hic quae quod porro provident aperiam vel! Officia aperiam repudiandae error ducimus! Eum cupiditate vero reiciendis? 
-                </p>
-            </div>
-            <!--msg 3-->
-            <div class="msg self">
-                <p class="msg_content">
-                    Lorem ipsum dolor 
-                </p>
-            </div>
-            <!--msg 4-->
-            <div class="msg">
-                <p class="msg_content">
-                    Lorem ipsum dolor si
-                </p>
-            </div>
+        <div class="window-content">
+            <ul class="nav-list" id="mainMenu">
+                <li class="active" data-nav="home">🏠 Inicio</li>
+                <li data-nav="settings">⚙️ Configuración</li>
+                <li data-nav="profile">👤 Perfil</li>
+                <li data-nav="darkmode">🌑 Modo Oscuro</li>
+            </ul>
         </div>
     </div>
+
+    <div id="historyWindow" class="floating-window window-right">
+            <div class="window-header">
+            <h3>Chats Recientes</h3>
+            <button class="close-btn" id="closeHistoryBtn">×</button>
+        </div>
+        <div class="window-content">
+            <ul class="chat-history" id="chatHistoryList">
+                <li class="active" data-chat-id="1">
+                    <img src="janky.png" alt="JL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="avatar-placeholder" style="display:none">JL</div>
+                    <div>
+                        <strong>Janky Liendo</strong>
+                        <p>Lorem ipsum dolor...</p>
+                    </div>
+                </li>
+                <li data-chat-id="2">
+                    <div class="avatar-placeholder">MG</div>
+                    <div>
+                        <strong>Maria Garcia</strong>
+                        <p>¡Excelente, gracias!</p>
+                    </div>
+                </li>
+                    <li data-chat-id="3">
+                    <div class="avatar-placeholder" style="background:#6f2">ST</div>
+                    <div>
+                        <strong>Soporte</strong>
+                        <p>Ticket resuelto.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
