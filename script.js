@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             profileDescription: "Soy un desarrollador web motivado y apasionado Ingeniero de Sistemas, con muchas ganas de aprender y crecer en el desarrollo web.",
             downloadCV: "Descargar CV",
             aboutMeTitle: "Sobre Mí",
-            aboutMeP1: "¡Hola! Soy Janky Liendo, un desarrollador web en formación. Como Ingeniero de Sistemas, me especializo en la creación de experiencias web dinámicas y funcionales. Mi caja de herramientas incluye HTML, CSS y JavaScript, junto con frameworks modernos como React y Angular para el frontend.",
+            aboutMeP1: "¡Hola! Soy Janky Liendo, un desarrollador web Profesional. Como Ingeniero de Sistemas, me especializo en la creación de experiencias web dinámicas y funcionales. Mi caja de herramientas incluye HTML, CSS y JavaScript, junto con frameworks modernos como React y Angular para el frontend.",
             aboutMeP2: "En el backend, tengo experiencia trabajando con Python y gestionando bases de datos con SQL. Además, he desarrollado proyectos utilizando WordPress, lo que me ha dado una visión completa del ciclo de vida del desarrollo web. Me entusiasma aplicar mis habilidades en proyectos desafiantes y colaborar con equipos que impulsen la innovación. ¡Explora mis proyectos y conectemos!",
             technologiesTitle: "Tecnologías",
             projectsTitle: "Proyectos",
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             profileDescription: "I am a motivated web developer and passionate Systems Engineering, eager to learn and grow in web development.",
             downloadCV: "Download CV",
             aboutMeTitle: "About Me",
-            aboutMeP1: "Hi! I'm Janky Liendo, a web developer in training. As a Systems Engineering, I specialize in creating dynamic and functional web experiences. My toolbox includes HTML, CSS, and JavaScript, along with modern frameworks like React and Angular for the frontend.",
+            aboutMeP1: "Hi! I'm Janky Liendo, a professional web developer. As a Systems Engineering, I specialize in creating dynamic and functional web experiences. My toolbox includes HTML, CSS, and JavaScript, along with modern frameworks like React and Angular for the frontend.",
             aboutMeP2: "On the backend, I have experience working with Python and managing databases with SQL. Additionally, I have developed projects using WordPress, which has given me a comprehensive view of the web development lifecycle. I am excited to apply my skills to challenging projects and collaborate with teams that drive innovation. Explore my projects and let's connect!",
             technologiesTitle: "Technologies",
             projectsTitle: "Projects",
@@ -345,3 +345,4 @@ document.addEventListener('DOMContentLoaded', function () {
     languageSelect.value = currentLang;
     setLanguage(currentLang);
 });
+
