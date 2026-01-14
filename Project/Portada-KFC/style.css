@@ -1,107 +1,191 @@
-*{
+* {
     box-sizing: border-box;
-}
-
-body,ul,h1,p,li,nav,div,a,img,header,main{
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: radial-gradient(circle, #f25608b7 0%, #df1b38ff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-body{
-    background: radial-gradient(circle,#f25608b7  0%, #df1b38ff 100%);
-}
-/*------------------Header----------------------*/
-
-.header{
-    display: flex;
-    position: relative;
-    background-color:transparent;
-}
-.header img{
-    width: 7rem;
-    background:linear-gradient(to top,transparent 0%,#fff 100%);
-    border-radius: 10px;
-}
-
-.header_nav{
-    position: absolute;
-    right: 20px;
-    top: 0;
-}
-
-.nav_ul{
-    display: flex;
-    gap: 10px;
-}
-
-.ul_li{
-    list-style: none;
-    margin: 10px;
-    padding: 10px;
-    margin-right: 20px;
-}
-
-a{
+a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.3rem;
 }
 
-/*-------------main----------------*/
+/*------------------ Header ----------------------*/
+.header {
+    display: flex;
+    justify-content: space-between; /* Esto mantiene LOGO a la izquierda y MENU a la derecha */
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: transparent;
+    position: relative; /* Asegura que se quede arriba */
+    z-index: 10;
+}
 
-.main{
+.header img {
+    width: 7rem; /* Tamaño normal en escritorio */
+    background: linear-gradient(to top, transparent 0%, #fff 100%);
+    border-radius: 10px;
+    display: block;
+    transition: width 0.3s ease; /* Suaviza el cambio de tamaño */
+}
+
+.nav_ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav_ul a {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav_ul a:hover {
+    color: #000;
+}
+
+/*------------- Main ----------------*/
+.main {
     color: #FFF;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    min-height: 80vh;
+}
+
+.main_content {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.main_content{
-    width: 50dvw;
-    position: relative;
-    margin-top: 20px;
-    height: 80dvh;
-}
-
-.main_content h1{
+.main_content h1 {
     font-size: 4rem;
     font-weight: normal;
+    line-height: 1.1;
 }
 
-.main_content p{
-    margin-top: 30px;
-    width: 800px;
-    font-size: 1.3rem;
+.main_content p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 100%;
 }
 
-.button{
-    position: absolute;
-    left: 0;
-    padding: 15px 50px;
-    margin-top: 30px;
+.actions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.button {
+    align-self: flex-start;
+    padding: 15px 40px;
     border-radius: 50px;
     background-color: #fff;
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
-.button a{
-    background-color: #fff;
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button a {
     color: #000;
     font-size: 1.2rem;
-}
-
-.main_img{
-    margin-top: 50px;
-    margin-right: 10px;
-}
-
-
-.social_media{
-    position: absolute;
-    bottom: 100px;
+    font-weight: bold;
 }
 
 .social_media a {
-    color: #fff;
     font-size: 2rem;
-    margin: 10px;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.social_media a:hover {
+    color: #000;
+}
+
+.main_img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_img img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
+}
+
+/*------------------ RESPONSIVE (MEDIA QUERIES) ----------------------*/
+
+@media (max-width: 1024px) {
+    .main_content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* CELULARES (max-width: 768px) */
+@media (max-width: 768px) {
+    .header {
+        /* Mantenemos 'row' para que no se ponga uno encima del otro verticalmente */
+        padding: 0.5rem 1rem; 
+    }
+
+    /* AQUÍ ESTÁ EL CAMBIO CLAVE PARA EL LOGO */
+    .header img {
+        width: 4rem; /* Se hace mucho más pequeño en celulares */
+    }
+
+    .nav_ul {
+        gap: 10px; /* Reducimos espacio entre links para que quepan mejor */
+    }
+
+    .nav_ul a {
+        font-size: 0.9rem; /* Letra del menú un poco más pequeña para evitar desbordes */
+    }
+
+    /* Resto del contenido responsive */
+    .main {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem 1rem;
+        justify-content: flex-start;
+    }
+
+    .main_img {
+        margin-bottom: 30px;
+        width: 70%;
+    }
+
+    .main_content {
+        align-items: center;
+    }
+
+    .main_content h1 {
+        font-size: 2.5rem;
+    }
+
+    .actions {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .button {
+        align-self: center;
+    }
 }
